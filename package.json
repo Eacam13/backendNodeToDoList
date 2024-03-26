@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "",
+  "main": "index.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "vercel-build": "npx prisma migrate deploy",
-    "start": "node index.js"
+    "vercel-build": "npx prisma migrate deploy"
   },
   "keywords": [],
   "author": "",

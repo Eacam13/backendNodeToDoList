@@ -12,10 +12,10 @@ Este é um projeto de backend para uma API desenvolvida em Node.js utilizando Ty
 - Inicia o servidor de desenvolvimento. Qualquer alteração nos arquivos será automaticamente recarregada.
 
 # Tecnologias Utilizadas
-- Node.js <img src="./" alt="Logo da Minha Empresa" width="50" height="50">
-- TypeScript <img src="https://exemplo.com/logo.png" alt="Logo da Minha Empresa" width="50" height="50">
-- Fastify <img src="https://exemplo.com/logo.png" alt="Logo da Minha Empresa" width="50" height="50">
-- Prisma <img src="https://exemplo.com/logo.png" alt="Logo da Minha Empresa" width="50" height="50">
+- Node.js <img src="src/assets/nodejs.png" alt="Logo da Minha Empresa" width="20" height="20">
+- TypeScript <img src="src/assets/ts.png" alt="Logo da Minha Empresa" width="20" height="20">
+- Fastify <img src="src/assets/fastify.png" alt="Logo da Minha Empresa" width="20" height="20">
+- Prisma <img src="src/assets/prisma.png" alt="Logo da Minha Empresa" width="20" height="20">
 
 # Contribuição
 - Contribuições são bem-vindas! Sinta-se à vontade para enviar um pull request ou abrir uma issue para relatar problemas ou sugestões.

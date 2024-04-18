@@ -4,6 +4,8 @@ import cors from '@fastify/cors'
 
 const app = Fastify({ logger: true })
 
+const teste = ''
+
 const start  = async () => {
 
     await app.register(cors)

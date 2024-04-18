@@ -19,6 +19,6 @@ export async function routes(fastify: FastifyInstance, options: FastifyPluginOpt
     })
 
     fastify.put('/task/:id', (request: FastifyRequest, reply: FastifyReply) => {
-        return new EditTaskController().handle(request, reply);
+        return new EditTaskController().handle(request, reply)
     })
 }

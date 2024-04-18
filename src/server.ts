@@ -4,7 +4,7 @@ import cors from '@fastify/cors'
 
 const app = Fastify({ logger: true })
 
-const teste = 'oila'
+const teste = 'oil'
 
 const start  = async () => {
 

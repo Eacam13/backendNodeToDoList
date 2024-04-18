@@ -7,9 +7,9 @@
     "node": "20.x"
   },
   "scripts": {
-    "start": "node src/server.ts",
     "dev": "tsx watch src/server.ts",
-    "build": "prisma generate --omit=dev && npm run build",
+    "build": "tsup src",
+    "start": "node src/server.js",
     "postinstall": "prisma generate"
   },
   "keywords": [],

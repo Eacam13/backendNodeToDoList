@@ -3,7 +3,10 @@
     "builds": [
         {
             "src": "src/server.ts",
-            "use": "@vercel/node"
+            "use": "@vercel/node",
+            "config": {
+                "postinstall": "npm run postinstall"
+            }
         }
     ],
     "routes": [
@@ -13,3 +16,4 @@
         }
     ]
 }
+

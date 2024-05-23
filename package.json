@@ -8,9 +8,7 @@
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsup src && npm run postinstall",
-    "start": "node src/server.js",
-    "postinstall": "prisma generate"
+    "build": "prisma generate && tsc"
   },
   "keywords": [],
   "author": "",

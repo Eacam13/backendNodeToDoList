@@ -1,19 +1,21 @@
 {
     "version": 2,
     "builds": [
-        {
-            "src": "src/server.ts",
-            "use": "@vercel/node",
-            "config": {
-                "postinstall": "npm run postinstall"
-            }
+      {
+        "src": "package.json",
+        "use": "@vercel/node",
+        "config": {
+          "includeFiles": ["src/**"]
         }
+      }
     ],
     "routes": [
-        {
-            "src": "(.*)",
-            "dest": "src/server.ts"
-        }
-    ]
-}
+      {
+        "src": "/(.*)",
+        "dest": "/src/server.ts"
+      }
+    ],
+    "buildCommand": "npm run build"
+  }
+  
 

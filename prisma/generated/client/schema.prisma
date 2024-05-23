@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
   output   = "./generated/client"
@@ -10,11 +9,11 @@ datasource db {
 }
 
 model Task {
-  id           String   @id @default(auto()) @map("_id") @db.ObjectId
-  task  String
-  isComplete  Boolean @default(false)
-  created_at  DateTime? @default(now())
-  updated_at  DateTime? @default(now())
+  id         String    @id @default(auto()) @map("_id") @db.ObjectId
+  task       String
+  isComplete Boolean   @default(false)
+  created_at DateTime? @default(now())
+  updated_at DateTime? @default(now())
 
   @@map("tasks")
 }

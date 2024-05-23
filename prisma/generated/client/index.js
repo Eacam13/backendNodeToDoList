@@ -31,12 +31,12 @@ exports.Prisma = Prisma
 exports.$Enums = {}
 
 /**
- * Prisma Client JS version: 5.11.0
- * Query Engine version: efd2449663b3d73d637ea1fd226bafbcf45b3102
+ * Prisma Client JS version: 5.14.0
+ * Query Engine version: e9771e62de70f79a5e1c604a2d7c8e2a0a874b48
  */
 Prisma.prismaVersion = {
-  client: "5.11.0",
-  engine: "efd2449663b3d73d637ea1fd226bafbcf45b3102"
+  client: "5.14.0",
+  engine: "e9771e62de70f79a5e1c604a2d7c8e2a0a874b48"
 }
 
 Prisma.PrismaClientKnownRequestError = PrismaClientKnownRequestError;
@@ -135,13 +135,13 @@ const config = {
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../..",
-  "clientVersion": "5.11.0",
-  "engineVersion": "efd2449663b3d73d637ea1fd226bafbcf45b3102",
+  "clientVersion": "5.14.0",
+  "engineVersion": "e9771e62de70f79a5e1c604a2d7c8e2a0a874b48",
   "datasourceNames": [
     "db"
   ],
   "activeProvider": "mongodb",
-  "postinstall": false,
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -150,8 +150,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Task {\n  id           String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  task  String\n  isComplete  Boolean @default(false)\n  created_at  DateTime? @default(now())\n  updated_at  DateTime? @default(now())\n\n  @@map(\"tasks\")\n}\n",
-  "inlineSchemaHash": "ef48357dda2c60bebe0eb17279563baac573b494067da0a6d6e6ad7d0aa7e269",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"./generated/client\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Task {\n  id         String    @id @default(auto()) @map(\"_id\") @db.ObjectId\n  task       String\n  isComplete Boolean   @default(false)\n  created_at DateTime? @default(now())\n  updated_at DateTime? @default(now())\n\n  @@map(\"tasks\")\n}\n",
+  "inlineSchemaHash": "fc421a8d213a1b560921391d508fbc761d98e683a82197118ac4e0a19dde4fe0",
   "copyEngine": true
 }
 

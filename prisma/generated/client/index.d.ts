@@ -175,8 +175,8 @@ export namespace Prisma {
   export import Exact = $Public.Exact
 
   /**
-   * Prisma Client JS version: 5.11.0
-   * Query Engine version: efd2449663b3d73d637ea1fd226bafbcf45b3102
+   * Prisma Client JS version: 5.14.0
+   * Query Engine version: e9771e62de70f79a5e1c604a2d7c8e2a0a874b48
    */
   export type PrismaVersion = {
     client: string
@@ -303,6 +303,11 @@ export namespace Prisma {
     include: any
   }
 
+  type SelectAndOmit = {
+    select: any
+    omit: any
+  }
+
   /**
    * Get the type of the value, that the Promise holds.
    */
@@ -351,7 +356,9 @@ export namespace Prisma {
   } &
     (T extends SelectAndInclude
       ? 'Please either choose `select` or `include`.'
-      : {})
+      : T extends SelectAndOmit
+        ? 'Please either choose `select` or `omit`.'
+        : {})
 
   /**
    * Subset + Intersection
@@ -775,6 +782,7 @@ export namespace Prisma {
     | 'findFirstOrThrow'
     | 'create'
     | 'createMany'
+    | 'createManyAndReturn'
     | 'update'
     | 'updateMany'
     | 'upsert'
@@ -1004,6 +1012,7 @@ export namespace Prisma {
   }
 
 
+
   export type $TaskPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Task"
     objects: {}
@@ -1043,8 +1052,8 @@ export namespace Prisma {
     ): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, 'findUnique'> | null, null, ExtArgs>
 
     /**
-     * Find one Task that matches the filter or throw an error  with `error.code='P2025'` 
-     *     if no matches were found.
+     * Find one Task that matches the filter or throw an error with `error.code='P2025'` 
+     * if no matches were found.
      * @param {TaskFindUniqueOrThrowArgs} args - Arguments to find a Task
      * @example
      * // Get one Task
@@ -1097,7 +1106,7 @@ export namespace Prisma {
      * Find zero or more Tasks that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {TaskFindManyArgs=} args - Arguments to filter and select certain fields only.
+     * @param {TaskFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
      * // Get all Tasks
      * const tasks = await prisma.task.findMany()
@@ -1131,14 +1140,14 @@ export namespace Prisma {
 
     /**
      * Create many Tasks.
-     *     @param {TaskCreateManyArgs} args - Arguments to create many Tasks.
-     *     @example
-     *     // Create many Tasks
-     *     const task = await prisma.task.createMany({
-     *       data: {
-     *         // ... provide data here
-     *       }
-     *     })
+     * @param {TaskCreateManyArgs} args - Arguments to create many Tasks.
+     * @example
+     * // Create many Tasks
+     * const task = await prisma.task.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
      *     
     **/
     createMany<T extends TaskCreateManyArgs<ExtArgs>>(
@@ -1443,7 +1452,6 @@ export namespace Prisma {
     
 
   // Custom InputTypes
-
   /**
    * Task findUnique
    */
@@ -1458,7 +1466,6 @@ export namespace Prisma {
     where: TaskWhereUniqueInput
   }
 
-
   /**
    * Task findUniqueOrThrow
    */
@@ -1472,7 +1479,6 @@ export namespace Prisma {
      */
     where: TaskWhereUniqueInput
   }
-
 
   /**
    * Task findFirst
@@ -1518,7 +1524,6 @@ export namespace Prisma {
     distinct?: TaskScalarFieldEnum | TaskScalarFieldEnum[]
   }
 
-
   /**
    * Task findFirstOrThrow
    */
@@ -1563,7 +1568,6 @@ export namespace Prisma {
     distinct?: TaskScalarFieldEnum | TaskScalarFieldEnum[]
   }
 
-
   /**
    * Task findMany
    */
@@ -1603,7 +1607,6 @@ export namespace Prisma {
     distinct?: TaskScalarFieldEnum | TaskScalarFieldEnum[]
   }
 
-
   /**
    * Task create
    */
@@ -1618,7 +1621,6 @@ export namespace Prisma {
     data: XOR<TaskCreateInput, TaskUncheckedCreateInput>
   }
 
-
   /**
    * Task createMany
    */
@@ -1628,7 +1630,6 @@ export namespace Prisma {
      */
     data: TaskCreateManyInput | TaskCreateManyInput[]
   }
-
 
   /**
    * Task update
@@ -1648,7 +1649,6 @@ export namespace Prisma {
     where: TaskWhereUniqueInput
   }
 
-
   /**
    * Task updateMany
    */
@@ -1662,7 +1662,6 @@ export namespace Prisma {
      */
     where?: TaskWhereInput
   }
-
 
   /**
    * Task upsert
@@ -1686,7 +1685,6 @@ export namespace Prisma {
     update: XOR<TaskUpdateInput, TaskUncheckedUpdateInput>
   }
 
-
   /**
    * Task delete
    */
@@ -1701,7 +1699,6 @@ export namespace Prisma {
     where: TaskWhereUniqueInput
   }
 
-
   /**
    * Task deleteMany
    */
@@ -1711,7 +1708,6 @@ export namespace Prisma {
      */
     where?: TaskWhereInput
   }
-
 
   /**
    * Task findRaw
@@ -1727,7 +1723,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Task aggregateRaw
    */
@@ -1742,7 +1737,6 @@ export namespace Prisma {
     options?: InputJsonValue
   }
 
-
   /**
    * Task without action
    */
@@ -1752,7 +1746,6 @@ export namespace Prisma {
      */
     select?: TaskSelect<ExtArgs> | null
   }
-
 
 
   /**

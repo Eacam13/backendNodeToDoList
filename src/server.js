@@ -16,14 +16,16 @@ const fastify_1 = __importDefault(require("fastify"));
 const routes_1 = require("./routes");
 const cors_1 = __importDefault(require("@fastify/cors"));
 const app = (0, fastify_1.default)({ logger: true });
-const teste = 'ol';
 const start = () => __awaiter(void 0, void 0, void 0, function* () {
     yield app.register(cors_1.default);
     yield app.register(routes_1.routes);
     try {
-        yield app.listen({ port: 3333 });
+        const port = process.env.PORT || 3333;
+        yield app.listen({ port: Number(port), host: '0.0.0.0' });
+        console.log(`Server is running at http://localhost:${port}`);
     }
     catch (err) {
+        app.log.error(err);
         process.exit(1);
     }
 });

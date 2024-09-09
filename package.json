@@ -8,8 +8,9 @@
   },
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc",
-    "postinstall": "prisma generate"
+    "build": "tsc --build",
+    "vercel-build": "prisma generate && prisma migrate deploy",
+    "prisma:generate": "prisma generate"
   },
   "keywords": [],
   "author": "",
